@@ -2,9 +2,16 @@ package com.ggit;
 
 public class Animal {
     private Vector2D position;
+    private final int id;
+    private static int counter = 0;
 
     public Animal(Vector2D position) {
         this.position = position;
+        this.id = counter++;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public Vector2D getPosition() {
