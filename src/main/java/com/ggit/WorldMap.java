@@ -45,9 +45,8 @@ public class WorldMap extends AbstractWorldMap {
 
     @Override
     public void run() {
-        MapDirection[] directions = MapDirection.values();
         animals.list.forEach(animal -> {
-            animal.move(directions[random.nextInt(directions.length)]);
+            animal.move(MapDirection.getRandomDirection());
             animals.placeAnimalOnMap(animal);
         });
     }
@@ -69,11 +68,13 @@ public class WorldMap extends AbstractWorldMap {
     @Override
     public void endDay() {
         dayNumber++;
+        int oldAnimalsCount = animals.list.size();
         animals.updateAnimals(animals.list.stream()
                 .map(animal -> animal.withChangedEnergy(animal.getEnergy() - dayEnergy))
                 .filter(animal -> animal.getEnergy() >= 0)
                 .map(Animal::dayOlder)
                 .toList());
+        System.out.printf("Zwierząt było %d, pozostało %d\n", oldAnimalsCount, animals.list.size());
     }
 
     private class AnimalsMapping {
