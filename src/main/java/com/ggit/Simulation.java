@@ -18,7 +18,9 @@ public class Simulation {
     }
 
     public static void simulateDay() {
+        worldMap.startDay();
         worldMap.run();
         worldMap.eat();
+        worldMap.endDay();
     }
 }

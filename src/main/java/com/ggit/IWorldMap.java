@@ -7,4 +7,6 @@ public interface IWorldMap {
 
     void run();
     void eat();
+    void startDay();
+    void endDay();
 }
