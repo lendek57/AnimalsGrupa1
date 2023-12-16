@@ -1,4 +1,4 @@
-package com.ggit;
+package com.ggit.simulation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,5 +24,9 @@ public class Genome {
         genome = new ArrayList<>();
         genome.addAll(mother.genome.subList(0, split));
         genome.addAll(genome.size(), father.genome.subList(split, genomeLength));
+    }
+
+    public MapDirection getRandomDirection() {
+        return genome.get(random.nextInt(genomeLength));
     }
 }

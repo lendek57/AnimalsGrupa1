@@ -1,4 +1,4 @@
-package com.ggit;
+package com.ggit.simulation;
 
 public class Simulation {
     private static final int height = 10;
@@ -21,6 +21,7 @@ public class Simulation {
         worldMap.startDay();
         worldMap.run();
         worldMap.eat();
+        worldMap.reproduce();
         worldMap.endDay();
     }
 }

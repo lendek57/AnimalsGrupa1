@@ -1,4 +1,4 @@
-package com.ggit;
+package com.ggit.simulation;
 
 public abstract class AbstractWorldMap implements IWorldMap {
     protected int width;
